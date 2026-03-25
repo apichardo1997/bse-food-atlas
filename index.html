@@ -94,12 +94,16 @@
     /* Map fills remaining space */
     .map-frame {
       flex: 1;
+      position: relative;
       border: none;
       overflow: hidden;
       background: #1a1a2e;
     }
 
     .map-frame iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
