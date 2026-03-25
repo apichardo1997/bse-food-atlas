@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geospatial Determinants of Food Similarity</title>
+  <title>Food Atlas</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -223,7 +223,7 @@
 <body>
 
   <header>
-    <h1>Geospatial Determinants of Food Similarity</h1>
+    <h1>Food Atlas</h1>
     <p>Exploring how geography, climate, trade, and culture shape what countries eat, using bilateral food similarity indices and spatial analysis.</p>
     <div class="authors">Ana Pichardo, Tina W., Megan Yeo, Lisbeth | BSE Geospatial Data Science, Spring 2026</div>
   </header>
@@ -267,10 +267,19 @@
   <!-- FOOD SIMILARITY TAB -->
   <div id="tab-food" class="tab-content">
     <div class="section">
-      <h2>Food Similarity Maps</h2>
-      <p class="subtitle">Interactive maps of bilateral food similarity (Finger-Kreinin index) across countries.</p>
-      <div class="placeholder">
-        Coming soon<br>Interactive food similarity maps will be added here
+      <h2>Interactive Food Similarity Maps</h2>
+      <p class="subtitle">Select a map to explore bilateral food similarity across countries. Hover over countries for details, zoom to explore.</p>
+
+      <div class="map-controls">
+        <label for="food-select">View:</label>
+        <select id="food-select" onchange="changeMap('food-iframe', this.value)">
+          <option value="maps/average_similarity_map.html">Average Food Similarity</option>
+          <option value="maps/similarity_to_china_map.html">Similarity to China</option>
+        </select>
+      </div>
+
+      <div class="map-frame">
+        <iframe id="food-iframe" src="maps/average_similarity_map.html"></iframe>
       </div>
     </div>
   </div>
